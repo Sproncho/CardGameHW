@@ -15,13 +15,13 @@ function Game({playerName,setState,scoreInfo}) {
             setP2Card(deck.secondPlayerCards.pop());
             if(p1Card.num > p2Card.num)
                 setP1Score(p1Score + 1);
-            else {
+            else if(p1Card.num < p2Card.num) {
                 setP2Score( p2Score + 1)
             }
         }else {
             if(p1Score>p2Score){
                 scoreInfo.setP1Score(scoreInfo.p1Score +1 )
-            }else {
+            }else if(p1Score < p2Score) {
                 scoreInfo.setP2Score(scoreInfo.p2Score + 1)
             }
             setState("finish")
