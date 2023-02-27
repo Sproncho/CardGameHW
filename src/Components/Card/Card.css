@@ -1,0 +1,25 @@
+.card{
+    width: 150px;
+    height: 200px;
+    margin: 20px auto;
+    border:2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .upperSuit{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.card .num{
+    font-size:2em;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.card .downSuit{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: auto;
+}
