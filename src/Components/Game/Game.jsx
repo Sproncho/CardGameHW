@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './Game.css'
 import {CardClass, generateDeck} from "../../utils/utils";
 import Card from "../Card/Card";
-function Game({playerName,setState,scoreInfo}) {
+function Game({playerName,setState,scoreInfo,setLastGameScore}) {
     const [p1Score,setP1Score] = useState(0);
     const [p2Score,setP2Score] = useState(0);
     const [p1Card,setP1Card] = useState(new CardClass(0,0));
@@ -24,6 +24,7 @@ function Game({playerName,setState,scoreInfo}) {
             }else if(p1Score < p2Score) {
                 scoreInfo.setP2Score(scoreInfo.p2Score + 1)
             }
+            setLastGameScore({p1Score,p2Score})
             setState("finish")
         }
     }

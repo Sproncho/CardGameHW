@@ -10,11 +10,12 @@ function App() {
     const [p1Score,setP1Score] = useState(0);
     const [p2Score,setP2Score] = useState(0);
     const scoreInfo ={p1Score,setP1Score,p2Score,setP2Score}
+    const [lastGameScore,setLastGameScore]=useState({})
   return (
     <div className="App">
         {state === 'main' && <Main setPlayerName={setPlayerName} playerName={playerName} setState={setState}/>}
-        {state === 'game' && <Game playerName={playerName} setState={setState} scoreInfo={scoreInfo}/>}
-        {state === "finish" && <Finish p1Score={p1Score} p2Score={p2Score} setState={setState}/>}
+        {state === 'game' && <Game playerName={playerName} setState={setState} scoreInfo={scoreInfo} setLastGameScore={setLastGameScore}/>}
+        {state === "finish" && <Finish p1Score={p1Score} p2Score={p2Score} setState={setState} lastGameScore={lastGameScore} name={playerName}/>}
     </div>
   );
 }
